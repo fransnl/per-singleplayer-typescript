@@ -1,0 +1,95 @@
+@font-face { font-family: fixedsys; src: url('./fixedsys-excelsior-301.ttf'); }
+
+:root {
+  --body-bg: hsl(33, 100%, 88%);
+  --btn-width: 8rem;
+  --btn-height: 2.5rem;
+  --btn-bg: hsl(0, 94%, 72%);
+  --btn-battom-bg: hsl(0, 62%, 67%);
+  --btn-shadow-bg: hsla(0, 62%, 67%, 0.15);
+  --text-cl: #efefef;
+  --border-radius: 10px 10px 15px 15px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: fixedsys;
+    background: #d4cdcb;
+}
+
+#main-landing{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    color: white;
+}
+
+h1{
+    font-size: 50px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+.container {
+    position: relative;
+}
+
+.container > .button {
+    width: 100%;
+    border: none;
+    color: var(--text-cl);
+    background-color: var(--btn-bg);
+    padding: 0.75rem 1.5rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: fixedsys;
+    transform: translateY(0);
+    -moz-transition: transform 250ms ease-in-out;
+    -webkit-transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
+    z-index: 0;
+}
+
+.container .button__bottom {
+    width: 100%;
+    height: var(--btn-height);
+    background-color: var(--btn-battom-bg);
+    border-radius: var(--border-radius);
+    position: absolute;
+    top: 12px;
+    z-index: -1;
+}
+
+.container > .button__shadow {
+    width: calc(100% + 0.5rem);
+    height: var(--btn-height);
+    outline: 2px solid hsla(0, 62%, 67%, 0.15);
+    background-color: var(--btn-shadow-bg);
+    border-radius: var(--border-radius);
+    position: absolute;
+    top: 15px;
+    left: -4px;
+    z-index: -2;
+}
+
+.container > .button:active,
+.container > .button:focus-visible {
+    transform: translateY(6px);
+}
